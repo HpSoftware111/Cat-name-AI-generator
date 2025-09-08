@@ -6,6 +6,9 @@ import {
   CardDescription,
 } from '@/components/ui/card';
 import Image from 'next/image';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { ArrowLeft } from 'lucide-react';
 
 export const metadata = {
   title: 'Cat Breeds | KittyName',
@@ -24,7 +27,15 @@ const breeds = [
 export default function BreedsPage() {
   return (
     <div className="container py-8 md:py-12">
-      <div className="mb-12 text-center">
+      <div className="relative mb-12 text-center">
+        <div className="absolute top-0 right-0">
+          <Button asChild>
+            <Link href="/">
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              Go Back
+            </Link>
+          </Button>
+        </div>
         <h1 className="font-headline text-5xl font-bold tracking-tighter md:text-7xl">
           Explore <span className="text-primary">Breeds</span>
         </h1>
